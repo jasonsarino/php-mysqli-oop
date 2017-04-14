@@ -7,7 +7,7 @@ define("PORT",               "3306");
 
 $db = new mysqli(HOST, USERNAME, PASSWORD, DBNAME);
 
-if (mysqli_connect_errno()) {
+if(mysqli_connect_errno()) {
 	die("Failed to connect to MySQL: " . mysqli_connect_error());
 }
 

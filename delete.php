@@ -11,4 +11,3 @@ if ($db->query($sql) === TRUE) {
     echo "Error deleting record: " . $conn->error;
 }
 ?>
-<br /><a href="index.php">Back to Student List</a>
