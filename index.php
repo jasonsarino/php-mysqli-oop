@@ -15,9 +15,24 @@ $query = "SELECT * FROM `student` ORDER BY `lastname`";
 $result = $db->query($query);
 if ($result->num_rows > 0) {
 	$content .= "<table border='1' width='600px'>";
-	$content .= "<tr><th>Last Name</th><th>First Name</th><th>Address</th><th>Contact No.</th><th>Options</th></tr>";
+	$content .= "<tr>";
+	$content .= 	"<th>Last Name</th>";
+	$content .= 	"<th>First Name</th>";
+	$content .= 	"<th>Address</th>";
+	$content .= 	"<th>Contact No.</th>";
+	$content .= 	"<th>Options</th>";
+	$content .= "</tr>";
 	while($row = $result->fetch_assoc()) {
-		$content .= "<tr><td>" . $row['lastname'] . "</td><td>" . $row['firstname'] . "</td><td>" . $row['address'] . "</td><td>" . $row['contactno'] . "</td><td><a href='edit.php?id=".$row['student_id']."'>Edit</a> | <a href='delete.php?id=".$row['student_id']."'>Delete</a></td></tr>";
+		$content .= "<tr>";
+		$content .=	 "<td>" . $row['lastname'] . "</td>";
+		$content .=	 "<td>" . $row['firstname'] . "</td>";
+		$content .=	 "<td>" . $row['address'] . "</td>";
+		$content .=	 "<td>" . $row['contactno'] . "</td>";
+		$content .=	 "<td>";
+		$content .=		 "<a href='edit.php?id=".$row['student_id']."'>Edit</a> | ";
+		$content .=		 "<a href='delete.php?id=".$row['student_id']."'>Delete</a>";
+		$content .=	 "</td>";
+		$content .= "</tr>";
 	}
 	$content .= "</table>";
 } else {

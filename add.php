@@ -7,7 +7,8 @@ if (isset($_POST['btnsubmit'])) {
 	$address = $_POST['address'];
 	$contactno = $_POST['contactno'];
 
-	$sql = "INSERT INTO `student`(`firstname`,`lastname`,`address`,`contactno`) VALUES('". $firstname  . "','". $lastname  . "','". $address  . "','". $contactno  . "')";
+	$sql = "INSERT INTO `student`(`firstname`,`lastname`,`address`,`contactno`) 
+	VALUES('". $firstname  . "','". $lastname  . "','". $address  . "','". $contactno  . "')";
 	$result = $db->query($sql);
 
 	if ($result === TRUE) {
