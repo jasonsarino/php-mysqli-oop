@@ -7,11 +7,11 @@ $query = $db->query($sql);
 $row = $query->fetch_assoc();
 
 if (isset($_POST['btnsubmit'])) {
-	$student_id = $_POST['student_id'];
-	$firstname = $_POST['firstname'];
-	$lastname = $_POST['lastname'];
-	$address = $_POST['address'];
-	$contactno = $_POST['contactno'];
+	$student_id = $db->real_escape_string($_POST['student_id']);
+	$firstname = $db->real_escape_string($_POST['firstname']);
+	$lastname = $db->real_escape_string($_POST['lastname']);
+	$address = $db->real_escape_string($_POST['address']);
+	$contactno = $db->real_escape_string($_POST['contactno']);
 
 	$sql = "UPDATE `student` SET 
 			`firstname` = '". $firstname  . "',

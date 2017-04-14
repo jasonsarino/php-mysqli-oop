@@ -2,10 +2,10 @@
 require_once 'config.php';
 
 if (isset($_POST['btnsubmit'])) {
-	$firstname = $_POST['firstname'];
-	$lastname = $_POST['lastname'];
-	$address = $_POST['address'];
-	$contactno = $_POST['contactno'];
+	$firstname = $db->real_escape_string($_POST['firstname']);
+	$lastname = $db->real_escape_string($_POST['lastname']);
+	$address = $db->real_escape_string($_POST['address']);
+	$contactno = $db->real_escape_string($_POST['contactno']);
 
 	$sql = "INSERT INTO `student`(`firstname`,`lastname`,`address`,`contactno`) 
 	VALUES('". $firstname  . "','". $lastname  . "','". $address  . "','". $contactno  . "')";
